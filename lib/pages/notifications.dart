@@ -15,7 +15,7 @@ class _NotificationPageState extends State<NotificationPage> {
   var requests = 11;
   void getRequest() {
     requests =
-        Provider.of<RequestProvider>(context, listen: false).requests.length;
+        (Provider.of<RequestProvider>(context, listen: false).requests).length;
   }
 
   void initState() {
@@ -67,7 +67,7 @@ class _NotificationPageState extends State<NotificationPage> {
                               children: [
                                 Image.asset('assets/follows1.png'),
                                 Text(
-                                  '11',
+                                  '$requests',
                                   style: TextStyle(color: Colors.white),
                                 )
                               ],
